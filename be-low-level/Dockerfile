@@ -1,4 +1,4 @@
-FROM rust:nightly-alpine AS builder
+FROM rust:nightly AS builder
 
 WORKDIR /app
 
