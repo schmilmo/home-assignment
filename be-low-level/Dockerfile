@@ -12,8 +12,8 @@ FROM alpine:3.20
 
 WORKDIR /root/
 
-COPY --from=builder /app/target/release/r2-backend .
+COPY --from=builder /app/target/release/r2_backend .
 
 EXPOSE 4000
 
-CMD ["./r2-backend"]
+CMD ["./r2_backend"]
