@@ -2,6 +2,7 @@ use actix_web::{web, App, HttpServer, HttpResponse, HttpRequest, middleware::Log
 use serde::{Deserialize, Serialize};
 use std::sync::Mutex;
 use std::collections::HashMap;
+use std::str::FromStr;
 use chrono::Local;
 use uuid::Uuid;
 use email_address::EmailAddress;
@@ -50,7 +51,7 @@ struct AppState {
 
 // Helper functions
 fn is_valid_email(email: &str) -> bool {
-    EmailAddress::parse(email, None).is_ok()
+    email.parse::<EmailAddress>().is_ok()
 }
 
 fn generate_token() -> String {
