@@ -8,7 +8,7 @@ COPY src ./src
 RUN cargo build --release
 
 # Final stage
-FROM alpine:3.20
+FROM debian:bookworm-slim
 
 WORKDIR /root/
 
